@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>assignment6b</title>
+    <meta charset="utf-8">
+    <meta name="description" content="My webpage">
+    <meta name="keywords" content="pizza">
+    <meta name="author" content="Matthias Bo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pizza.css">
+    <h1>Welcome to the official web page of Matthias's pizzeria</h1>
+    </head>
+    <body>
+    <p1>Please select the size and amount of toppings you would like on your pizza. Here are the following prices:</p1>
+    <br>
+    <table>
+    <tr>
+    <th>Item</th>
+    <th>Cost</th>
+    </tr>
+    <tr>
+    <td>Large</td>
+    <td>$6.00</td>
+    </tr>
+    <tr>
+    <td>Extra Large</td>
+    <td>$10.00</td>
+    </tr>
+    <tr>
+    <td>1 topping</td>
+    <td>$1.00</td>
+    </tr>
+    <tr>
+    <td>2 toppings</td>
+    <td>$1.75</td>
+    </tr>
+    <tr>
+    <td>3 toppings</td>
+    <td>$2.50</td>
+    </tr>
+    <tr>
+    <td>4 toppings</td>
+    <td>$3.35</td>
+    </tr>
+    </table>
+    <p><i>Please put the size here</i></p>
+    <input type="text" id="sizepizza">
+    <br>
+    <br>
+    <p><i>Please put the amount of toppings here</i></p>
+    <input type="text" id="toppingstyped">
+    <br>
+    <br>
+    <button id="price">Send order</button>
+    <script>
+    let large;
+    let XL;
+    let one;
+    let two;
+    let three;
+    let four;
+
+    document.getElementById("price").addEventListener("click", myfunction);
+    function myfunction() {
+    let finalprice;
+    let size;
+    let topping;
+    finalprice = document.getElementById("price").value;
+    size = document.getElementById("sizepizza").value;
+    topping = document.getElementById("toppingstyped").value;
+    if ((size == large && topping == one) (finalprice = (6 + 1)*1.13)) {
+    alert ("Your total comes to "+ finalprice);
+}
+}
+
+    </script>
+    </body>
+</html>
