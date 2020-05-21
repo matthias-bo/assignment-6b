@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+   <head>
     <title>assignment6b</title>
     <meta charset="utf-8">
     <meta name="description" content="My webpage">
@@ -8,7 +8,7 @@
     <meta name="author" content="Matthias Bo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pizza.css">
-    <h1>Welcome to the official web page of Matthias's pizzeria</h1>
+    <h1>Welcome to the official web page of Matthias' pizzeria</h1>
     </head>
     <body>
     <p1>Please select the size and amount of toppings you would like on your pizza. Here are the following prices:</p1>
@@ -43,36 +43,48 @@
     <td>$3.35</td>
     </tr>
     </table>
-    <p><i>Please put the size here</i></p>
+    <p><i>Please put the size here (Large or XL)</i></p>
     <input type="text" id="sizepizza">
     <br>
     <br>
-    <p><i>Please put the amount of toppings here</i></p>
+    <p><i>Please put the amount of toppings here:</i></p>
     <input type="text" id="toppingstyped">
     <br>
     <br>
-    <button id="price">Send order</button>
+    <button id="pizzaprice">Submit</button>
     <script>
-    let large;
-    let XL;
-    let one;
-    let two;
-    let three;
-    let four;
-
-    document.getElementById("price").addEventListener("click", myfunction);
+    document.getElementById("pizzaprice").addEventListener("click", myfunction);
     function myfunction() {
+    let size = document.getElementById("sizepizza").value;
+    if (size == "Large") {
+        size = 6.00;
+    }
+    else if (size == "XL") {
+        size= 10.00;
+}
+    let topping = document.getElementById("toppingstyped").value;
+    if (topping == "1") {
+       topping = 1.00;
+}
+    else if (topping == "2") {
+        topping = 1.75;
+}
+    else if (topping == "3") {
+        topping = 2.50;
+}
+    else if (topping == "4") {
+        topping = 3.35;
+}
+    let subtotal;
     let finalprice;
-    let size;
-    let topping;
-    finalprice = document.getElementById("price").value;
-    size = document.getElementById("sizepizza").value;
-    topping = document.getElementById("toppingstyped").value;
-    if ((size == large && topping == one) (finalprice = (6 + 1)*1.13)) {
-    alert ("Your total comes to "+ finalprice);
+    let taxes;
+    subtotal = size + topping;
+    alert ("Your subtotal is $ "+subtotal);
+    taxes = subtotal * 0.13
+    alert ("Your taxes will be $ "+taxes)
+    finalprice = subtotal*1.13;
+    alert ("Your final cost is $ "+finalprice);
 }
-}
-
     </script>
     </body>
 </html>
